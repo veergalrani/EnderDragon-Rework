@@ -24,6 +24,10 @@ execute if entity @s[scores={rcube.dragonRework_dragonHealth=0..250},tag=!dragon
 execute if entity @s[scores={rcube.dragonRework_dragonHealth=0..250},tag=!dragon_rework.MAD] run tag @s add dragon_rework.MAD
 execute if entity @s[tag=dragon_rework.MAD] at @s run particle portal ~ ~ ~ 3 3 3 1 50 force
 
+# Make invunerable
+execute if entity @e[tag=dragon_rework.miniboss] run data merge entity @s {Invulnerable:1b}
+#execute if entity @e[tag=dragon_rework.miniboss] run scoreboard players @s
+
 # Handle Death
 execute if entity @s[scores={rcube.dragonRework_dragonHealth=0}] run stopsound @a record rcube:dragon_rework/fight1
 execute if entity @s[scores={rcube.dragonRework_dragonHealth=0}] run stopsound @a record rcube:dragon_rework/fight2
